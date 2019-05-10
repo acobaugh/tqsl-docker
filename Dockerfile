@@ -13,4 +13,7 @@ RUN yum install -y epel-release
 RUN yum install expat-devel -y \
  && yum install wxGTK-devel -y
 RUN cd /build/tqsl-* && cmake . \
- && make
+ && make \
+ && make install
+
+ENTRYPOINT /usr/local/bin/tqsl
